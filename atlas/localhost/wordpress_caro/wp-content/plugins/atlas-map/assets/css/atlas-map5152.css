@@ -1,0 +1,554 @@
+#atlas-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #f8f8f8;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.popup-media {
+    margin-top: 15px;
+}
+
+
+/* قرمز کردن مارکر */
+
+.leaflet-marker-icon.hue-red {
+  filter: hue-rotate(150deg) saturate(5);
+}
+
+
+
+
+
+.popup-media img,
+.popup-media video,
+.popup-media iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.popup-footer.popup-media-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.popup-link {
+  border: #007bff 1px solid;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.popup-link:hover {
+  background: #007bff;
+  color: white;
+}
+
+.leaflet-popup-content {
+  max-width: 220px !important;
+  font-size: 13px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.atlas-details-btn {
+  margin-top: 6px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.atlas-details-btn:hover {
+  background-color: #0056b3;
+}
+
+#atlas-filters label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#atlas-filters input,
+#atlas-filters select, .atlas-details-btn {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 220px;
+  margin-top: 5px;
+}
+
+.atlas-details-btn{
+ color: #007bff;
+   background-color: white;
+
+}
+
+.atlas-details-btn:hover{
+      background-color: #007bff;
+      color: white;
+}
+
+
+
+#atlas-filters button {
+  background-color: #0073aa;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#atlas-filters button:hover {
+  background-color: #005f8c;
+}
+
+
+.atlas-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.atlas-modal-overlay.active {
+  display: flex;
+}
+
+.atlas-modal-content {
+  background: white;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.atlas-modal-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.atlas-popup-wrapper p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.leaflet-popup-content strong {
+  display: block;         /* برای اینکه بتونه وسط‌چین بشه */
+  text-align: center;     /* وسط‌چینی متن */
+  font-size: 15px;        /* افزایش سایز فونت */
+  margin-bottom: 5px;     /* فاصله از دکمه پایین */
+  margin-top: 5px;     
+}
+
+/* تیتر اصلی بالا */
+.popup-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* بخش اطلاعات سمت راست */
+.popup-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.popup-info label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.popup-info span {
+  margin-right: 10px;
+  color: #333;
+}
+
+/* بخش نقشه */
+.popup-map {
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* متن‌های روی نقشه */
+.popup-map-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* دکمه بستن یا هر دکمه پایینی */
+.popup-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.popup-footer button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+#atlas-close-modal, #atlas-close-modal:hover {
+    border: none;
+    background-color: white;
+}
+
+#atlas-close-modal:hover{
+    color: #007bff;
+}
+
+.leaflet-popup-content-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-mini-map {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.popup-panel {
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  direction: rtl;
+  font-family: "IRANSans", sans-serif;
+  margin: auto;
+}
+
+.popup-meta-title {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.popup-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.popup-separator {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.popup-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.popup-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-info-label {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.popup-info-value {
+  font-size: 15px;
+  color: #222;
+  font-weight: bold;
+}
+
+.popup-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.popup-footer a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+
+
+/* دکمه باز کردن فیلتر */
+.atlas-filters-toggle {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 6px 0 0 6px;
+    z-index: 9999;
+}
+
+/* پنل فیلتر کشویی */
+.atlas-filters-panel {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease-in-out;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* وقتی فعال شد */
+.atlas-filters-panel.open {
+    right: 0;
+}
+
+/* سربرگ پنل */
+.atlas-filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* دکمه بستن */
+.atlas-filters-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* هر آیتم فیلتر */
+.atlas-filter-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.atlas-filter-item input,
+.atlas-filter-item select {
+    margin-top: 4px;
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* دکمه‌ها پایین پنل */
+.atlas-filters-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.atlas-btn-primary {
+    flex: 1;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.atlas-btn-secondary {
+    flex: 1;
+    background-color: #6c757d;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* دکمه باز کردن فیلتر */
+.atlas-filters-toggle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50% 0 0 50%;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+.atlas-filters-toggle:hover {
+    background: #0056b3;
+}
+.atlas-filters-toggle.hidden {
+    display: none;
+}
+
+/* پنل فیلتر کشویی */
+.atlas-filters-panel {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 320px;
+    height: 100%;
+    background: #f8f9fa;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.2);
+    padding: 24px 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease-in-out;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    gap: 20px;
+}
+.atlas-filters-panel.open {
+    right: 0;
+}
+
+/* سربرگ پنل */
+.atlas-filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+.atlas-filters-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.atlas-filters-close:hover {
+    background: none;
+}
+
+/* بدنه فیلترها */
+.atlas-filter-item {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap: 10px;
+}
+.atlas-filter-item input,
+.atlas-filter-item select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    transition: border-color 0.2s;
+}
+.atlas-filter-item input:focus,
+.atlas-filter-item select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* دکمه‌ها در پایین پنل */
+.atlas-filters-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+.atlas-btn-primary,
+.atlas-btn-secondary {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.atlas-btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+.atlas-btn-primary:hover {
+    background-color: #0056b3;
+}
+.atlas-btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+.atlas-btn-secondary:hover {
+    background-color: #495057;
+}
